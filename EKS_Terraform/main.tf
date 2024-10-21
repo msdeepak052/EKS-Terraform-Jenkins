@@ -20,6 +20,9 @@ module "eks" {
       most_recent = true
     }
   }
+  enable_irsa = true
+  # Associate the IAM role for the EKS cluster
+  iam_role_arn = aws_iam_role.eks_role.arn
 
   eks_managed_node_groups = {
     nodes = {

@@ -7,3 +7,8 @@ output "private_subnet_cidrs" {
   value = local.private_subnet_ids
   
   }
+
+  # Output IAM Role ARN (optional)
+output "eks_role_arn" {
+  value = aws_iam_role.eks_role.arn
+}
